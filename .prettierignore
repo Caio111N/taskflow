@@ -1,0 +1,5 @@
+# Saídas e dependências não devem ser reformatadas.
+node_modules/
+dist/
+coverage/
+package-lock.json

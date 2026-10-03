@@ -1,0 +1,8 @@
+// Mantém as configurações de aplicação e ferramentas separadas e verificáveis.
+{
+  "files": [],
+  "references": [
+    { "path": "./tsconfig.app.json" },
+    { "path": "./tsconfig.node.json" }
+  ]
+}
