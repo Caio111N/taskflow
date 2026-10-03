@@ -1,0 +1,158 @@
+/* Carrega as camadas do Tailwind antes dos estilos-base da aplicação. */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Mantém o tamanho dos elementos previsível em todas as telas. */
+@layer base {
+  @keyframes modal-in {
+    from {
+      opacity: 0;
+      transform: translateY(8px) scale(0.98);
+    }
+
+    to {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+  }
+
+  html {
+    font-family:
+      Inter,
+      ui-sans-serif,
+      system-ui,
+      -apple-system,
+      BlinkMacSystemFont,
+      'Segoe UI',
+      sans-serif;
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    min-width: 320px;
+    min-height: 100vh;
+    margin: 0;
+  }
+
+  button,
+  input,
+  textarea {
+    font: inherit;
+  }
+
+  :focus-visible {
+    outline: 3px solid #6366f1;
+    outline-offset: 3px;
+  }
+}
+
+@layer utilities {
+  html[data-theme='dark'] {
+    color-scheme: dark;
+  }
+
+  html[data-theme='dark'] body,
+  html[data-theme='dark'] .bg-slate-50 {
+    background-color: #0f172a;
+  }
+
+  html[data-theme='dark'] .bg-white,
+  html[data-theme='dark'] .bg-white\/70,
+  html[data-theme='dark'] .bg-white\/90,
+  html[data-theme='dark'] .bg-white\/95 {
+    background-color: #1e293b;
+  }
+
+  html[data-theme='dark'] .bg-slate-100,
+  html[data-theme='dark'] .bg-slate-200 {
+    background-color: #334155;
+  }
+
+  html[data-theme='dark'] .bg-indigo-50,
+  html[data-theme='dark'] .hover\:bg-indigo-50:hover {
+    background-color: #312e81;
+  }
+
+  html[data-theme='dark'] .bg-rose-100,
+  html[data-theme='dark'] .hover\:bg-rose-50:hover {
+    background-color: #4c1d2b;
+  }
+
+  html[data-theme='dark'] .text-slate-950,
+  html[data-theme='dark'] .text-slate-900 {
+    color: #f8fafc;
+  }
+
+  html[data-theme='dark'] .text-slate-800,
+  html[data-theme='dark'] .text-slate-700 {
+    color: #e2e8f0;
+  }
+
+  html[data-theme='dark'] .text-slate-600,
+  html[data-theme='dark'] .text-slate-500,
+  html[data-theme='dark'] .text-slate-400 {
+    color: #94a3b8;
+  }
+
+  html[data-theme='dark'] .text-indigo-600,
+  html[data-theme='dark'] .text-indigo-700,
+  html[data-theme='dark'] .hover\:text-indigo-700:hover,
+  html[data-theme='dark'] .hover\:text-indigo-900:hover {
+    color: #c7d2fe;
+  }
+
+  html[data-theme='dark'] .text-rose-600,
+  html[data-theme='dark'] .text-rose-700 {
+    color: #fda4af;
+  }
+
+  html[data-theme='dark'] .text-emerald-700 {
+    color: #6ee7b7;
+  }
+
+  html[data-theme='dark'] .border-slate-100,
+  html[data-theme='dark'] .border-slate-200,
+  html[data-theme='dark'] .border-slate-300,
+  html[data-theme='dark'] .border-slate-400 {
+    border-color: #475569;
+  }
+
+  html[data-theme='dark'] .border-indigo-200,
+  html[data-theme='dark'] .hover\:border-indigo-300:hover {
+    border-color: #6366f1;
+  }
+
+  html[data-theme='dark'] .hover\:bg-slate-100:hover,
+  html[data-theme='dark'] .hover\:bg-slate-200:hover,
+  html[data-theme='dark'] .hover\:bg-white:hover {
+    background-color: #475569;
+  }
+
+  html[data-theme='dark'] .hover\:bg-rose-100:hover {
+    background-color: #881337;
+  }
+
+  html[data-theme='dark'] .placeholder\:text-slate-400::placeholder {
+    color: #94a3b8;
+  }
+
+  html[data-theme='dark'] .border-slate-200:focus,
+  html[data-theme='dark'] .border-slate-200:focus-visible {
+    border-color: #818cf8;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      scroll-behavior: auto !important;
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+}
